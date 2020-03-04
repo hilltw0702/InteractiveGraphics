@@ -21,16 +21,23 @@ public:
    AbstractGraphicsSystem() : 
       _window(nullptr), _camera(new BaseCamera()), _shader(nullptr), 
       _errorReport(""){}
+
    AbstractGraphicsSystem(
       AbstractGraphicsWindow* window, BaseCamera* camera, AbstractGraphicsShader* shader) :
       _window(window), _camera(camera), _shader(shader),
       _errorReport(""){}
-   virtual ~AbstractGraphicsSystem();
 
+   virtual ~AbstractGraphicsSystem();
    string ReportErrors() { return _errorReport; }
+
    virtual void AddObject(const string& objectName, AbstractGraphicsObject* object) {
       _objects[objectName] = object;
    }
+
+   virtual AbstractGraphicsObject* GetObject(const string& objectName) {
+       return _objects[objectName];
+   }
+
    virtual void SetShader(AbstractGraphicsShader* shader) { _shader = shader; }
    virtual bool InitializeContext() = 0;
    virtual void ShowWindow() = 0;

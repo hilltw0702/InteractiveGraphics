@@ -19,3 +19,8 @@ void ReferenceFrame::Move(const glm::vec3& vector)
    translateMat[3] = glm::vec4(vector, 0.0f);
    this->orientation += translateMat;
 }
+
+void ReferenceFrame::Scale(float ratio)
+{
+    orientation = glm::scale(orientation, glm::vec3(ratio, ratio, ratio));
+}

@@ -6,6 +6,7 @@
 #include "OpenGLGraphicsObject.h"
 #include "TextFileReader.h"
 #include "GraphicsObjectReader.h"
+#include "Generate.h"
 
 void ReportError(const string& error) 
 {
@@ -47,9 +48,31 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
    object->SetShader(shader);
 
    auto camera = new BaseCamera();
+   camera->frame.SetPosition(2.0f, 5.0f, 7.0f);
    AbstractGraphicsSystem* graphics = new OpenGLGraphicsSystem(window, camera, shader);
 
    graphics->AddObject("Cube", object);
+   object = Generate::FlatSurface(10, 10, { 0.0f, 0.5f, 0.0f, 1.0f });
+   object->SetShader(shader);
+   graphics->AddObject("Floor", object);
+   auto cube = (OpenGLGraphicsObject*)graphics->GetObject("Cube");
+   cube->frame.Move({ 0.0f, 0.5f, 0.0f });
+
+   graphics->AddObject("Cuboid", object);
+   object = Generate::Cuboid(2, 1, 2, { 1.0f, 0.0f, 0.0f, 0.0f });
+   object->SetShader(shader);
+   graphics->AddObject("Cuboid 1", object);
+   auto cuboid1 = (OpenGLGraphicsObject*)graphics->GetObject("Cuboid 1");
+   cuboid1->SetColor(0, 6, { 0.0f, 0.25f, 0.35f });
+   cuboid1->frame.Move({ -3.0f, 0.5f, 3.0f });
+
+   graphics->AddObject("Cuboid", object);
+   object = Generate::Cuboid(1, 3, 1, { 0.0f, 0.0f, 1.0f, 0.0f });
+   object->SetShader(shader);
+   graphics->AddObject("Cuboid 2", object);
+   auto cuboid2 = (OpenGLGraphicsObject*)graphics->GetObject("Cuboid 2");
+   cuboid2->SetColor(4, 6, { 0.15f, 0.75f, 0.35f });
+   cuboid2->frame.Move({ 3.0f, 0.5f, -3.0f });
 
    if (graphics->InitializeContext()) {
       graphics->ShowWindow();

@@ -61,3 +61,14 @@ void OpenGLGraphicsObject::Render()
    glUseProgram(0);
    glBindVertexArray(0);
 }
+
+void OpenGLGraphicsObject::SetColor(int facet, int numberOfVertices, RGBA color)
+{
+    int start = facet * numberOfVertices;
+    int end = start + numberOfVertices;
+    for (int i = start; i < end; i++) {
+        _vertices[i].red = color.red;
+        _vertices[i].green = color.green;
+        _vertices[i].blue = color.blue;
+    }
+}

@@ -23,13 +23,17 @@ public:
    OpenGLGraphicsObject() : 
       _vaoId(0), _vboId(0), frame()
    {}
+
    OpenGLGraphicsObject(AbstractGraphicsShader* shader) : 
       AbstractGraphicsObject(shader), _vaoId(0), _vboId(0), frame()
    {}
+
    ~OpenGLGraphicsObject();
    void AddVertex(const Vertex& vertex) { _vertices.push_back(vertex); }
    void Setup();
    void Render();
+
+   void SetColor(int facet, int numberOfVertices, RGBA color);
 };
 
 #endif

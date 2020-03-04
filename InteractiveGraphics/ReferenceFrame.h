@@ -27,6 +27,7 @@ public:
    void Rotate(float degrees, const glm::vec3& axis);
    void RotateWorld(float degrees, const glm::vec3& axis);
    void Move(const glm::vec3& vector);
+   void Scale(float scale);
 };
 
 #endif

@@ -160,6 +160,7 @@
     <ClCompile Include="OpenGLGraphicsObject.cpp" />
     <ClCompile Include="OpenGLGraphicsSystem.cpp" />
     <ClCompile Include="OpenGLGraphicsWindow.cpp" />
+    <ClCompile Include="OpenGLIndexedGraphicsObject.cpp" />
     <ClCompile Include="ReferenceFrame.cpp" />
     <ClCompile Include="TextFileReader.cpp" />
   </ItemGroup>
@@ -177,6 +178,7 @@
     <ClInclude Include="OpenGLGraphicsObject.h" />
     <ClInclude Include="OpenGLGraphicsSystem.h" />
     <ClInclude Include="OpenGLGraphicsWindow.h" />
+    <ClInclude Include="OpenGLIndexedGraphicsObject.h" />
     <ClInclude Include="ReferenceFrame.h" />
     <ClInclude Include="TextFileReader.h" />
   </ItemGroup>

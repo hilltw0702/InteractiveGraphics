@@ -85,3 +85,25 @@ OpenGLGraphicsObject* Generate::Cuboid(float width, float height, float depth, R
 
     return cuboid;
 }
+
+OpenGLIndexedGraphicsObject* Generate::IndexedFlatSurface(float width, float depth, RGBA color)
+{
+    auto flatSurface = new OpenGLIndexedGraphicsObject();
+    float halfWidth = width / 2;
+    float halfDepth = depth / 2;
+    Vertex V1 = { -halfWidth, 0.0f, -halfDepth, color.red, color.green, color.blue };
+    Vertex V2 = { -halfWidth, 0.0f,  halfDepth, color.red, color.green, color.blue };
+    Vertex V3 = { halfWidth, 0.0f,  halfDepth, color.red, color.green, color.blue };
+    Vertex V4 = { halfWidth, 0.0f, -halfDepth, color.red, color.green, color.blue };
+    flatSurface->AddVertex(V1);
+    flatSurface->AddVertex(V2);
+    flatSurface->AddVertex(V3);
+    flatSurface->AddVertex(V4);
+    flatSurface->AddIndex(0);
+    flatSurface->AddIndex(1);
+    flatSurface->AddIndex(2);
+    flatSurface->AddIndex(0);
+    flatSurface->AddIndex(2);
+    flatSurface->AddIndex(3);
+    return flatSurface;
+}

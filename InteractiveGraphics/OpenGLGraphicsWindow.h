@@ -2,7 +2,7 @@
 #ifndef OPENGL_GRAPHICS_WINDOW
 #define OPENGL_GRAPHICS_WINDOW
 
-#include <GLFW\glfw3.h>
+#include <glfw3.h>
 #include "AbstractGraphicsWindow.h"
 
 class OpenGLGraphicsWindow :

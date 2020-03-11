@@ -3,8 +3,8 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <IncludePath>Z:\School\Interactive Graphics\include;$(IncludePath)</IncludePath>
-    <LibraryPath>Z:\School\Interactive Graphics\libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\include;Z:\School\Interactive Graphics\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\libs;Z:\School\Interactive Graphics\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup />
   <ItemGroup />

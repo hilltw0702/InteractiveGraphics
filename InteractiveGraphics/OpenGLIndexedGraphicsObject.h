@@ -11,15 +11,15 @@ protected:
 	vector<unsigned int> _indexes;
 
 public:
-	OpenGLIndexedGraphicsObject(GLuint indexVbo) :
-		OpenGLGraphicsObject(), _indexVbo(indexVbo)
+	OpenGLIndexedGraphicsObject() :
+		OpenGLGraphicsObject(), _indexVbo(0)
 	{}
 
-	OpenGLIndexedGraphicsObject(AbstractGraphicsShader* abstractGraphicsShader, GLuint indexVbo) : 
-		OpenGLGraphicsObject(abstractGraphicsShader), _indexVbo(indexVbo)
+	OpenGLIndexedGraphicsObject(AbstractGraphicsShader* shader) : 
+		OpenGLGraphicsObject(shader), _indexVbo(0)
 	{}
 
-	void AddIdex(unsigned int index) { _indexes.push_back(index); }
+	void AddIndex(unsigned int index) { _indexes.push_back(index); }
 	void Setup();
 	void Render();
 };

@@ -2,7 +2,7 @@
 #ifndef OPENGL_GRAPHICS_SYSTEM
 #define OPENGL_GRAPHICS_SYSTEM
 #include <glad/glad.h> 
-#include <GLFW/glfw3.h>
+#include <glfw3.h>
 #include "AbstractGraphicsSystem.h"
 #include "OpenGLGraphicsWindow.h"
 #include "GLSLGraphicsShader.h"

@@ -52,11 +52,16 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
    AbstractGraphicsSystem* graphics = new OpenGLGraphicsSystem(window, camera, shader);
 
    graphics->AddObject("Cube", object);
+   object = Generate::IndexedFlatSurface(10, 10, { 0.0f, 0.0f, 0.4f, 1.0f });
+   object->SetShader(shader);
+   graphics->AddObject("Floor", object);
+
+   /*graphics->AddObject("Cube", object);
    object = Generate::FlatSurface(10, 10, { 0.0f, 0.5f, 0.0f, 1.0f });
    object->SetShader(shader);
    graphics->AddObject("Floor", object);
    auto cube = (OpenGLGraphicsObject*)graphics->GetObject("Cube");
-   cube->frame.Move({ 0.0f, 0.5f, 0.0f });
+   cube->frame.Move({ 0.0f, 0.5f, 0.0f });*/
 
    graphics->AddObject("Cuboid", object);
    object = Generate::Cuboid(2, 1, 2, { 1.0f, 0.0f, 0.0f, 0.0f });
